@@ -11,7 +11,7 @@ Aquest projecte conté una classe `Calculadora` simple escrita en PHP, juntament
 ## Workflows
 
 - **Hola Actions TCH**: Workflow manual de salutació.
-- **CI TCH**: Pipeline d'integració contínua que s'executa automàticament en cada `push` i `pull request` a la branca `main`. Prova el codi amb les versions de PHP 8.1, 8.2 i 8.3 en paral·lel.
+- **CI TCH**: Pipeline d'integració contínua que s'executa automàticament en cada `push` i `pull request` a la branca `main`. Prova el codi amb les versions de PHP 8.1, 8.2 i 8.3 en paral·lel..
 
 ## Estructura del projecte
 
