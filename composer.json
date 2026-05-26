@@ -1,5 +1,5 @@
 {
-  "name": "Akshige/ci-actions-tch",
+  "name": "akshige/ci-actions-tch",
   "description": "Exercici de CI amb GitHub Actions",
   "type": "project",
   "require": {},
