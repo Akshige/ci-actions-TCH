@@ -1,0 +1,11 @@
+name: Hola Actions TCH
+
+on:
+  workflow_dispatch:
+
+jobs:
+  saludar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Saluda des de GitHub Actions
+        run: echo "Hola, GitHub Actions! Soc TCH"

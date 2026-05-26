@@ -1,0 +1,40 @@
+name: CI TCH
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-version: ['8.1', '8.2', '8.3']
+
+    name: PHPUnit amb PHP ${{ matrix.php-version }}
+
+    steps:
+      - name: Checkout del codi
+        uses: actions/checkout@v4
+
+      - name: Configurar PHP ${{ matrix.php-version }}
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: mbstring, intl
+          coverage: none
+
+      - name: Instal·lar dependències amb Composer
+        run: composer install --no-interaction --prefer-dist
+
+      - name: Executar tests amb PHPUnit
+        run: ./vendor/bin/phpunit --log-junit resultats.xml
+
+      - name: Pujar informe de tests com a artefacte
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: resultats-TCH
+          path: resultats.xml
